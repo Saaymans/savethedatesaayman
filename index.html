@@ -34,10 +34,6 @@
 
   /* ============ HERO ============ */
   #hero{padding-top:3rem}
-  .addressed{
-    font-family:'Great Vibes',cursive;color:var(--champagne-soft);
-    font-size:clamp(1.5rem,6vw,2rem);line-height:1.2;margin-bottom:1.2rem;
-  }
   .std-title{line-height:1}
   .std-title .word{
     font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--ivory);
@@ -146,7 +142,6 @@
 
 <section id="hero">
   <div class="inner">
-    <p class="addressed" id="addressed" hidden></p>
     <div class="std-title">
       <span class="word">Save</span>
       <span class="the">the</span>
@@ -242,19 +237,6 @@
 
 <script>
 (function(){
-  /* personal address from the link (?to=Name) */
-  try {
-    var toName = new URLSearchParams(window.location.search).get('to');
-    if (toName) {
-      toName = toName.replace(/\+/g,' ').trim().slice(0, 60);
-      if (toName) {
-        var adEl = document.getElementById('addressed');
-        adEl.textContent = toName;
-        adEl.hidden = false;
-      }
-    }
-  } catch(e) {}
-
   /* strip pull */
   var booth = document.getElementById('booth');
   var hint = document.getElementById('booth-hint');
